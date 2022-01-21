@@ -31,14 +31,12 @@ public class FrontController extends HttpServlet {
 		
 		// http://localhost:8080/testWeb/board
 		
-		String url = req.getRequestURI(); //��û�� url�ּ� �˾Ƴ���
-		// => url ���� /testWeb/board
+		String url = req.getRequestURI();
+
 		String contextPath = req.getContextPath();
-		// => /testWeb
+
 		String path = url.substring(contextPath.length());
-		// path���� /board
-		System.out.println(path);
-		//  "/xxxxx"
+
 		Controller c = uriMap.get(path);
 		
 		String view = "notfound";
